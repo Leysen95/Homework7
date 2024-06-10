@@ -2,15 +2,16 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Task1");
         double total = 0;
-        int deposite = 15000;
+        double deposit = 15000;
         double percentPerMonth = 1.01;
         int month = 1;
         while (total <= 2459000) {
-            total += deposite;
+            total += deposit;
             total *= percentPerMonth;
-            System.out.printf("Месяц %s, сумма накоплений равна %s рублей%n", month, total );
+            System.out.printf("Месяц %s, сумма накоплений равна %.2f рублей %n", month, total);
             month++;
         }
+        System.out.println();
 
         System.out.println("Task2");
         int counter = 0;
@@ -25,14 +26,14 @@ public class Main {
         System.out.println();
 
         System.out.println("Task3");
-        int birthRate;
-        int deathRate;
+        int fertility;
+        int mortality;
         int population = 12_000_000;
         for (int year = 1; year <= 10; year++) {
-            birthRate = population / 1000 * 17;
-            deathRate = population / 1000 * 8;
-            population += birthRate - deathRate;
-            System.out.printf("Год %s, численность населения составляет %s%n", year, population );
+            fertility = population / 1000 * 17;
+            mortality = population / 1000 * 8;
+            population += fertility - mortality;
+            System.out.printf("Год %s, численность населения составляет %s%n", year, population);
         }
         System.out.println();
 
@@ -43,8 +44,8 @@ public class Main {
         while (vasyaDeposite < 12_000_000) {
             vasyaDeposite *= vasyaPercent;
             if (vasyaMonth % 6 == 0) {
-            System.out.printf("Месяц: %s, сумма накоплений: %.2f %n", vasyaMonth, vasyaDeposite);
-        }
+                System.out.printf("Месяц: %s, сумма накоплений: %.2f %n", vasyaMonth, vasyaDeposite);
+            }
             vasyaMonth++;
         }
         System.out.println();
@@ -62,10 +63,11 @@ public class Main {
         System.out.println();
 
         System.out.println("Task7");
-        int firstFriday = 1;
-        for (int i = firstFriday; i <= 31; i+=7) {
-                System.out.printf("Сегодня пятница, %s-е число. Необходимо подготовить отчет %n", i);
-            }
+        int friday = 5;
+        while (friday <= 31) {
+            System.out.printf("Сегодня пятница, %s-е число. Необходимо подготовить отчет %n", friday);
+            friday += 7;
+        }
         System.out.println();
 
         System.out.println("Task8");
@@ -73,10 +75,10 @@ public class Main {
         int currentYear = 2024;
         int lowerBoarder = currentYear - 200;
         int upperBoarder = currentYear + 100;
-        for (int i = 0; i < upperBoarder; i+= period) {
-            if (i > lowerBoarder) {
+        for (int i = lowerBoarder; i < upperBoarder; i++) {
+            if (i % period == 0) {
                 System.out.println(i);
             }
         }
-        }
     }
+}
