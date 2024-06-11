@@ -63,11 +63,14 @@ public class Main {
         System.out.println();
 
         System.out.println("Task7");
-        int friday = 5;
+        int friday = 7;
+        int iterCounter = 0;
         while (friday <= 31) {
             System.out.printf("Сегодня пятница, %s-е число. Необходимо подготовить отчет %n", friday);
             friday += 7;
+            iterCounter++;
         }
+        System.out.println("Количество интераци: " + iterCounter);
         System.out.println();
 
         System.out.println("Task8");
