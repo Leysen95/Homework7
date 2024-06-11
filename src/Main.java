@@ -74,14 +74,12 @@ public class Main {
         System.out.println();
 
         System.out.println("Task8");
-        int period = 79;
-        int currentYear = 2024;
-        int lowerBoarder = currentYear - 200;
-        int upperBoarder = currentYear + 100;
-        for (int i = lowerBoarder; i < upperBoarder; i++) {
-            if (i % period == 0) {
-                System.out.println(i);
-            }
+        int interval = 79;
+        int startYear = 2024;
+        int lowerBoarder = 1896;
+        int upperBoarder = 2054;
+        for (int i = lowerBoarder; i <= upperBoarder; i += interval) {
+            System.out.println(i);
         }
     }
 }
